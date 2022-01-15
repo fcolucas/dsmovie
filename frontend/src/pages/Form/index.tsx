@@ -1,7 +1,41 @@
+import './styles.css'
 
 function Form() {
+    const movie = {
+        id: 1,
+        image: "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg",
+        title: "The Witcher",
+        count: 2,
+        score: 4.5
+    };
+
     return(
-        <h1>Página de formulário</h1>
+        <div className="dsmovie-form-container">
+            <img src={movie.image} alt={movie.title} className="dsmovie-movie-card-image" />
+            <div className="dsmovie-card-bottom-container">
+                <h3>{movie.title}</h3>
+                <form className="dsmovie-form">
+                    <div className="form-group dsmovie-form-group">
+                        <label htmlFor="email"> Informe seu email</label>
+                        <input type="email" className="form-control" id="email"/>
+                    </div>
+                    <div className="form-group dsmovie-form-group">
+                        <label htmlFor="score">Informe sua avaliação</label>
+                        <select id="score" className="form-control">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                        </select>
+                    </div>
+                    <div className="dsmovie-form-btn-container">
+                        <button className="btn btn-primary dsmovie-btn">Salvar</button>
+                    </div>
+                </form>
+                <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
+            </div>
+        </div>
     )
 }
 
